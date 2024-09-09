@@ -1,3 +1,5 @@
+// ******************************** Conversions ************************************* //
+
 let score = 33 
 console.log(typeof score);
 console.log(typeof(score));
@@ -81,3 +83,36 @@ console.log();
 // null(empty value) => null
 // undefined(value not defined) => undefined
 // 123(Number) => 123 
+
+// ******************************** Operations ************************************* //
+
+let v=3
+let negative_v = -v
+console.log(negative_v); // It prints -3.
+
+console.log(2**3); // It means 2^3 = 8.
+
+// Concatinate of the two string.
+let s1 = "Hello"
+let s2 = " Bhavya"
+console.log(s1+s2);
+
+console.log("1" + 1); // Output:11
+console.log(1 + "1"); // Output:11
+console.log("1" + 1 + 1); // Output:111
+console.log(1 + 1 + "1"); // Output:
+console.log("Bhavya" + 1); // Output:Bhavya1
+console.log("1" + (1 + 1)); // Output:12
+
+/* Prefix and Postfix */
+let x = 3
+let y = ++x
+console.log(y); // It prints 4.
+// first increment and the assign the value to the variable y.
+
+
+let a = 3
+let b = a++
+console.log(b); // It prints 3.
+// first assign and then increment the value, so does not change in value.
+
