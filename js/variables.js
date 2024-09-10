@@ -14,7 +14,7 @@ let account;
 // only assigning the value
 
 // id = 6534765 (cannot assign other value because of const variable)
-name = 'Sanjiv'
+name = 'Sanjiv' // It is generally not used.
 
 console.log(id); 
 // to print id 
