@@ -4,7 +4,7 @@
 
 // Primitive Datatypes (7 Types)
 // 1.string
-// 2.Number
+// 2.Number (Range: 2^53)
 // 3.Boolean
 // 4.Null
 // 5.undefined
