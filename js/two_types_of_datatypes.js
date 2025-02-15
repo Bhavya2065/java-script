@@ -24,6 +24,8 @@ const isLoggedIn = false
 
 // Symbol Datatype 
 const id = Symbol('123')
+console.log(id);
+
 const anotherid = Symbol('123')
 console.log(id === anotherid); // false
 
