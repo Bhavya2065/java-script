@@ -30,7 +30,9 @@ const anotherid = Symbol('123')
 console.log(id === anotherid); // false
 
 // BigInt
-const bigNumber = 8637326765763476574n
+const bigNumber = 8637326765763476574;
+console.log(bigNumber);
+
 
 // array
 const heros = ["Hanuman","Adinath","Mahavir","Krishna"]
@@ -40,6 +42,8 @@ let myobj = {
     name : "Bhavya",
     age: 22
 }
+console.log(myobj);
+
 
 // Function
 const fun = function() {
