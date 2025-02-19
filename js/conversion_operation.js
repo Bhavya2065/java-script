@@ -100,7 +100,7 @@ console.log(s1+s2);
 console.log("1" + 1); // Output:11
 console.log(1 + "1"); // Output:11
 console.log("1" + 1 + 1); // Output:111
-console.log(1 + 1 + "1"); // Output:
+console.log(1 + 1 + "1"); // Output: 21
 console.log("Bhavya" + 1); // Output:Bhavya1
 console.log("1" + (1 + 1)); // Output:12
 
