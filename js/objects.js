@@ -65,7 +65,7 @@ console.log(Jsuser.greetings());
 console.log(Jsuser.greetings1());
 console.log();
 
-// How to merge two objects
+// How to merge two objects: first Method
 
 const obj1 = {
     1: "a",
@@ -85,6 +85,42 @@ console.log(obj3);
 
 // ********************** case: 2 ************************** //
 const obj4 = Object.assign(obj1, obj2)
-console.log(obj4); // Here target is the obj1
+console.log(obj4); // Here target is the obj1   
 console.log(obj3 === obj4);
 // It gives fales because the target is changed for both cases
+console.log();
+
+// Second Method
+
+const obj5 = {...obj1, ...obj2}
+console.log(obj5);
+console.log();
+
+// How to take value from database (mIMP)
+
+const user = [
+    {
+        name: "Bhavya",
+        age: 20,
+        email: "sanjiv@gmail.com"
+    },
+    {
+        name: "Divyansh",
+        age: 22,
+        email: "divyansh@gmail.com"
+    },
+    {
+        name: "Neelam",
+        age: 47,
+        email: "neelam@gmail.com"
+    }
+]
+
+console.log(user[1].age);
+console.log(user[1].email);
+console.log(Jsuser);
+console.log(Object.keys(Jsuser)); // The output should be in array
+// we retrive the keys of object Jsuser
+console.log(Object.values(Jsuser)); // Same as it gives the values of that keys
+console.log(Object.entries(Jsuser)); // It gives array under array
+console.log(Jsuser.hasOwnProperty('email')); // It checks that Jsuser have this key or not
