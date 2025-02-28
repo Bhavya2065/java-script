@@ -9,7 +9,7 @@ const Jsuser = {
     age: 15,
     email: "sanjivdani123@gmail.com",
     isLoggedin: true,
-    lastLoginDays: ["Monday","Saturday"]
+    lastLoginDays: ["Monday", "Saturday"]
 }
 
 // How to access this values
@@ -53,13 +53,38 @@ console.log();
 // How to give greetings to object
 // Note: To give greetings to object, first we comment the freeze functionality because it locks the all values
 
-Jsuser.greetings = function() {
+Jsuser.greetings = function () {
     console.log("Hello Js User");
 }
 
-Jsuser.greetings1 = function() {
+Jsuser.greetings1 = function () {
     console.log(`Hello Js User, ${this["full Name"]}`);
 }
 
 console.log(Jsuser.greetings());
 console.log(Jsuser.greetings1());
+console.log();
+
+// How to merge two objects
+
+const obj1 = {
+    1: "a",
+    2: "b"
+}
+
+const obj2 = {
+    3: "a",
+    4: "b"
+}
+
+// ********************** case: 1 ************************** //
+const obj3 = Object.assign({}, obj1, obj2) 
+// Here first element ( {} ) is target and other elements are source 
+console.log(obj3);
+// Note: Here  `{}` is the target so that the all object values can stored in in this curly brases
+
+// ********************** case: 2 ************************** //
+const obj4 = Object.assign(obj1, obj2)
+console.log(obj4); // Here target is the obj1
+console.log(obj3 === obj4);
+// It gives fales because the target is changed for both cases
