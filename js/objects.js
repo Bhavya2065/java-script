@@ -19,7 +19,7 @@ console.log(Jsuser["email"]); // (2)
 console.log(Jsuser["full Name"]); // There is no other way to print this value
 console.log();
 
-// Interview Question: Define One symbol in object and retreive it
+// **************** Interview Question: Define One symbol in object and retreive it ************************
 
 const mySymbol = Symbol(100)
 
@@ -33,7 +33,7 @@ console.log(obj.mySymbol); // This is totally Wrong method to retrive this data
 console.log(obj);
 console.log();
 
-// How to change the object values
+// ***************************** How to change the object values ******************************
 
 Jsuser.age = 20
 Jsuser["full Name"] = "Bhavy Shah"
@@ -42,7 +42,7 @@ console.log(Jsuser["full Name"]);
 // This all changes are appllying in Jsuser means all values are update in real time
 console.log();
 
-// How to lock the values that can not be change by anyone
+// *********************** How to lock the values that can not be change by anyone ************************
 
 console.log(Jsuser);
 // Object.freeze(Jsuser)
@@ -65,7 +65,7 @@ console.log(Jsuser.greetings());
 console.log(Jsuser.greetings1());
 console.log();
 
-// How to merge two objects: first Method
+// *********************************** How to merge two objects: first Method **************************************
 
 const obj1 = {
     1: "a",
@@ -96,7 +96,7 @@ const obj5 = {...obj1, ...obj2}
 console.log(obj5);
 console.log();
 
-// How to take value from database (mIMP)
+// ************************* How to take value from database (mIMP) ****************************
 
 const user = [
     {
@@ -124,3 +124,17 @@ console.log(Object.keys(Jsuser)); // The output should be in array
 console.log(Object.values(Jsuser)); // Same as it gives the values of that keys
 console.log(Object.entries(Jsuser)); // It gives array under array
 console.log(Jsuser.hasOwnProperty('email')); // It checks that Jsuser have this key or not
+console.log();
+
+// ************************* How to destructure the object *****************************
+
+const course = {
+    coursename: "Java script",
+    price: 999,
+    Coursementor: "Hitesh"
+}
+
+// two methods to retrive data 
+console.log(course.Coursementor); // 1 
+const {Coursementor: instructor} = course // 2 : this method used when retrive data more than one time
+console.log(instructor);
