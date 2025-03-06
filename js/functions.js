@@ -73,3 +73,10 @@ function handleArray(array) {
 const getArray = handleArray(array)
 console.log(getArray);
 // we can write also the above syntax without return as same as in object passing case
+
+// *********************************** Other way to Define function ***********************************************
+
+const addTwo = function(num){
+    return num + 2;
+}
+console.log(addTwo(2));
