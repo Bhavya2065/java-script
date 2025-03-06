@@ -17,6 +17,15 @@ if (true) {
     console.log(a); // It print 10
 }
 console.log(a);
-
-
 // for both node and console of browser the global scope is different (Sometimes may be asked in interview)
+
+function Big() {
+    const name = "Bhavya"
+    function Small() {
+        const website = "yt"
+        console.log(name);
+    }
+    // console.log(website);
+    Small()
+}
+Big()
