@@ -19,6 +19,8 @@ if (true) {
 console.log(a);
 // for both node and console of browser the global scope is different (Sometimes may be asked in interview)
 
+// *********************************** more about scope ***********************************
+
 function Big() {
     const name = "Bhavya"
     function Small() {
@@ -29,3 +31,15 @@ function Big() {
     Small()
 }
 Big()
+
+// *********************************** Some interesting facts ***********************************
+
+addone(2)
+function addone(val) {
+    return val + 1
+}
+
+console.log(addTwo(2)); // This generates error because the variable addTwo holds the functions
+const addTwo = function(num){
+    return num + 2
+}
