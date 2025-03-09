@@ -13,3 +13,8 @@
 //     console.log();
 // }
 
+while (condition) {}
+
+// executed one time than check the condition
+
+do {} while (condition);
