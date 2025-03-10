@@ -4,6 +4,7 @@ console.log(array); // typeof: Object
 console.log(typeof array);
 console.log(newarray);
 console.log(array[0]);
+console.log();
 
 // ************************************ Array Methods ****************************************
 
@@ -22,15 +23,17 @@ console.log(array);
 
 console.log(array.includes(1)); // true
 console.log(array.indexOf(3)); // It finds this number in array and return the index 
+console.log();
 
 const myNewArray = array.join()
 console.log(array);
 console.log(myNewArray);
 console.log(typeof myNewArray); // It converts Object --> String
+console.log();
 
 const digits = [0,1,2,3]
 const nums = [4,5,6,7]
-digits.push(nums);
+console.log(digits.push(nums)) // It retuns the length of pushed array which is 5 => [ 0, 1, 2, 3, [ 4, 5, 6, 7 ] ]
 console.log(digits); // It changes the Original array
 console.log(digits.length);
 
