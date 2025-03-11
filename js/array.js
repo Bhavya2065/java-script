@@ -70,3 +70,41 @@ console.log(array);
 console.log(array.splice(1,3)); // It removes the element from original array from start index to end index
 // It affects the original array as well
 console.log(array);
+
+// **************************************** copyWithin() function ********************************************
+
+// Working: copyWithin(target, start, end)
+// Usecase: Here start and end is optional. It copy the values from start to (end-1) and paste it from the target. 
+console.log([1, 2, 3, 4, 5].copyWithin(0, 3));
+// [4, 5, 3, 4, 5]
+
+console.log([1, 2, 3, 4, 5].copyWithin(0, 3, 4));
+// [4, 2, 3, 4, 5]
+
+console.log([1, 2, 3, 4, 5].copyWithin(-2, -3, -1)); 
+// [ 1, 2, 3, 3, 4 ]
+
+console.log([1, 2, 3, 4, 5].copyWithin(2, -3, -1)); 
+// [ 1, 2, 3, 4, 5 ]
+
+console.log([1, 2, 3, 4, 5].copyWithin(2, 3, -1)); 
+// [ 1, 2, 4, 4, 5 ]
+
+// Note: Here "-3" means (array.length + (-3)) = (5 -3) = 2nd index
+// It is mutating method means it changes the original array
+
+// **************************************** fill() function ********************************************
+
+// fill(target, start, end)
+// Usecase: Here start and end is optional, it copies the target index value and paste it over from start to end-1
+
+console.log([1, 2, 3].fill(4)); // [4, 4, 4]
+console.log([1, 2, 3].fill(4, 1)); // [1, 4, 4]
+console.log([1, 2, 3].fill(4, 1, 2)); // [1, 4, 3]
+console.log([1, 2, 3].fill(4, 1, 1)); // [1, 2, 3]
+console.log([1, 2, 3].fill(4, 3, 3)); // [1, 2, 3]
+console.log([1, 2, 3].fill(4, -3, -2)); // [4, 2, 3]
+console.log([1, 2, 3].fill(4, NaN, NaN)); // [1, 2, 3]
+console.log([1, 2, 3].fill(4, 3, 5)); // [1, 2, 3]
+console.log(Array(3)); // [ <3 empty items> ]
+console.log(Array(3).fill(4)); // [4, 4, 4]
