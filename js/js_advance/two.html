@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        body{
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    
+</body>
+<script>
+    const div = document.createElement("div") // It create the div tag in html in console of browser
+    console.log(div);
+    div.className = "main" // It heps to give the className
+    div.id = Math.floor((Math.random() * 10) + 1) // It heps to give the id using (generate random id)
+    div.setAttribute("title", "title generated") // It set the title
+    div.style.backgroundColor = "red" // It gives the style
+    div.style.padding = "20px" // It gives the padding
+    // div.innerHTML = "Hello Developer!!" // first method for write the text under the div tag
+    const text = document.createTextNode("Hello Developer!!") // second method for write the text under the div tag
+    div.appendChild(text) // append this child 'text' in div
+    document.body.appendChild(div) // this is used to showcase all activity in browser with applied styles and many more means all div properties that we have applied above it reflects on the browser using this line
+    // const h1 = document.createElement("h1")
+    // console.log(h1);
+</script>
+</html>
