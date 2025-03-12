@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    // ************************** Normal approach **************************
+    // This function is used for append the new li tag in unorder list
+    function addlanguage (langName){
+        const list = document.createElement('li')
+        list.innerHTML = `${langName}`
+        document.querySelector('.language').appendChild(list)
+    }
+    addlanguage("python")
+    addlanguage("C++")
+    // Exception : This approach is used for samll scale projects but if we have many text to add then we use optimize approach 
+
+    // ************************** Optimize approach **************************
+    function addoptilan(langName){
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+    }
+    addlanguage("C#")
+    addlanguage("typescript")
+
+    // How to edit these values (first Method)
+    const edit = document.querySelector("li:nth-child(2)")
+    const newli = document.createElement('li')
+    newli.textContent = "Ruby"
+    console.log(newli);
+    edit.replaceWith(newli)
+
+    // second method
+    const firstlang = document.querySelector("li:first-child")
+    firstlang.outerHTML = "<li>MongoDB</li>"
+
+    // remove li
+    const lastlang = document.querySelector("li:last-child")
+    lastlang.remove()
+
+</script>
+</html>
