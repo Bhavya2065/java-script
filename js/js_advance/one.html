@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+    <script>
+        const parent = document.querySelector('.parent')
+        // console.log(parent);
+        // console.log(parent.children); // used to access the child divs of the class parent
+        // console.log(parent.children[1].innerHTML);
+        // for (let i = 0; i < parent.children.length; i++) {
+        //     console.log(parent.children[i].innerHTML) // innerHTML use for print the data written inside the child divs
+        // }
+        // parent.children[2].style.color = "green" // Wednesday changes the color to green
+        // parent.children[2].style.padding = "10px" // Wednesday have padding of 10px
+        // console.log(parent.firstElementChild); // It returns the first div tag of class parent
+        // console.log(parent.lastElementChild); // It returns the last div tag of class parent
+        // console.log(parent.firstChild);
+        const dayOne = document.querySelector(".day")
+        // console.log(dayOne);
+        // console.log(dayOne.parentElement);
+        // console.log(dayOne.nextElementSibling);
+        console.log(parent.childNodes); // these is the tree structure of the parent element
+    </script>
+</body>
+</html>
