@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="background-color: black; color: white;">
+    <h1>Learn Js</h1>
+    <div class="div-1" id="first">First Div</div>
+    <div class="div-2" id="second">second Div</div>
+    <div class="div-3" id="third">third Div</div>
+    <div class="div-4" id="fourth">four Div</div>
+    <form action="" class="form">
+        <ul id="list" class="unorder-list">
+            <li>list1</li>
+            <li>list2</li>
+            <li>list3</li>
+            <li>list4</li>
+        </ul>
+    </form>
+    <form action="" class="form">
+        <img src="https://letsenhance.io/static/73136da51c245e80edc6ccfe44888a99/1015f/MainBefore.jpg" alt=""
+            class="my-img" height="120px" width="200px">
+        <div class="form-div">
+            <ul id="list">
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </form>
+    <button id="btn">Click Me!!</button>
+</body>
+<script>
+
+    // ********************************* Document-Level Properties **************************************
+
+    console.log(document.documentElement);
+    console.log(document.head);
+    console.log(document.body);
+    const mytitle = document.title = "new title"
+    console.log(mytitle); // It sets the title in head tag
+    console.log(document.URL);
+    console.log(typeof document.forms);
+    console.log(document.forms);
+    console.log(document.forms[0]);
+
+    // applying loop on this HTMLCollection (It is not array so we don't apply array property on this)
+    for (let i = 0; i < document.forms.length; i++) {
+        console.log(document.forms[i]);
+    }
+    console.log(document.images);
+    console.log(document.links);
+
+    // How to convert HTMLCollection in array
+    const convert = Array.from(document.forms)
+    console.log(convert);
+    console.log(Array.isArray(convert));
+    convert.forEach((forms) => console.log(forms));
+    convert.forEach((form, index) => {
+        console.log(`Form ${index + 1}:`, form);
+    });
+
+    // ********************************* Element-Level Properties **************************************
+
+    const div = document.getElementById("first") // It returns the div tag of id = first
+    console.log(div);
+    div.id = "first-div" // It chabges the id from first to first-div
+    console.log(document.getElementById("first-div"));
+    console.log(document.getElementsByClassName("div-1")); // It also return also div tag but in HTMLCollection
+    // we can also change the classname as above 
+
+    // console.log(documet.getElementById("second").innerHTML = "<p>Hello, World!</p>"); // This is wrong syntax
+    const div1 = document.getElementById("fourth")
+    div1.innerHTML = "<p>Hello, World!</p>" // add this tag and content in div tag
+    console.log(div1);
+
+    const div2 = document.getElementById("third");
+    div2.textContent = "Hello, World!"; // Sets text content
+    console.log(div2);
+    // Note: It sets only text in div tag not the whole tag like innerHTML
+
+    // ********************************* DOM Methods **************************************
+
+    // Returns the first element that matches the specified CSS selector
+    const div3 = document.querySelector("#list"); // By ID
+    const item = document.querySelector(".form"); // By class
+    const firstP = document.querySelector("p"); // By tag
+    console.log(div3, item, firstP);
+
+    const items = document.querySelectorAll(".form"); // Returns a NodeList of all elements that match the specified CSS selector
+    console.log(items);
+
+    const textNode = document.createTextNode("Hello, World!"); // Creates a new text node with the specified text
+    document.body.appendChild(textNode); // Adds text to the document
+
+    // ********************************* Element-Level Methods **************************************
+
+    const img = document.querySelector("img");
+    console.log(img.getAttribute("src")); // Logs the image source
+
+    const img1 = document.querySelector("img");
+    img1.setAttribute("src", "https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?cs=srgb&dl=pexels-anjana-c-169994-674010.jpg&fm=jpg"); // Sets the value of the specified attribute
+
+    const newDiv = document.createElement("div");
+    newDiv.textContent = "New Div";
+    document.body.appendChild(newDiv); // Adds to the body
+    console.log(newDiv);
+
+    // ********************************* Element-related Methods **************************************
+    
+    const button = document.getElementById('btn')
+    button.addEventListener("click", () => console.log('Button Clicked!!'))
+
+</script>
+
+</html>
