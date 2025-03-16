@@ -1,5 +1,4 @@
 // iife: Immediately Invoked Function Expressions (IIFE)
-
 // Use: To remove global scope polution 
 
 // Condition: without remove the gloabal polution means gloabal variable declaration
