@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="greet">Hello Developer</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    // ===================================================================================== //
+    //  Syntax: setTimeout(function, delay)
+    // ===================================================================================== //
+    
+    function changeText() {
+        document.getElementById('greet').innerHTML = "Hello Bhavya!!";
+    }
+
+    const change = setTimeout(changeText, 2000) // In these we pass the reference of the function, not calling
+
+    document.getElementById('stop').addEventListener('click', () => {
+        clearTimeout(change);
+    })
+</script>
+</html>

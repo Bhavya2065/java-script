@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Events — Bubbling &amp; Capturing</title>
+</head>
+
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing Images</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" id="photoshop"
+                    src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt="photoshop"></li>
+            <li><img width="200px" id="japan"
+                    src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt=""></li>
+            <li><img width="200px" id="river"
+                    src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt=""></li>
+            <li><img width="200px" id="owl"
+                    src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt=""></li>
+            <li><img width="200px" id="prayer"
+                    src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     JAVASCRIPT — EVENT BUBBLING & CAPTURING
+     ═══════════════════════════════════════════════════════════════════════════
+
+     Syntax: element.addEventListener(event, function, useCapture)
+       - useCapture = false  → Bubbling  (default, inner → outer)
+       - useCapture = true   → Capturing (outer → inner)
+     ═══════════════════════════════════════════════════════════════════════════ -->
+
+<script>
+
+    // ═══════════════════════════════════════════════════════════════════════════
+    //  ACTIVE CODE
+    // ═══════════════════════════════════════════════════════════════════════════
+
+    // --- Event Capturing demo (outer → inner) (Top → Bottom) ---
+    // When you click the owl image, "Clicked on ul" prints FIRST, then "Clicked on owl".
+
+    document.getElementById('images').addEventListener('click', (e) => {
+        console.log(`Clicked on ul`);
+    }, true);
+
+    document.getElementById('owl').addEventListener('click', (e) => {
+        console.log(`Clicked on owl`);
+        // e.stopPropagation();   // Stops further propagation in both phases
+    }, true);
+
+
+    // ═══════════════════════════════════════════════════════════════════════════
+    //  COMMENTED EXAMPLES — REFERENCE ONLY
+    // ═══════════════════════════════════════════════════════════════════════════
+
+    // ─── Method 1: onclick property (no event propagation) ───
+    // document.getElementById('owl').onclick = function() {
+    //     alert('owl');
+    // };
+
+    // ─── Method 2: addEventListener (supports propagation) ───
+    // document.getElementById('owl').addEventListener('click', (e) => {
+    //     console.log(`Clicked on owl`);
+    // }, false);
+
+    // ─── preventDefault() example ───
+    // document.getElementById('google').addEventListener('click', (e) => {
+    //     console.log(`Google Clicked!`);
+    //     e.preventDefault();
+    // }, false);
+
+    // ─── Problem: removing the li removes the whole ul ───
+    // document.getElementById('images').addEventListener('click', (e) => {
+    //     console.log(e.target.parentNode);
+    //     const image = e.target.parentNode;
+    //     image.remove();                           // First approach
+    //     image.parentNode.removeChild(image);      // Second approach
+    // });
+
+    // ─── Solution: only remove if the clicked element is an IMG tag ───
+    // document.getElementById('images').addEventListener('click', (e) => {
+    //     if (e.target.tagName === 'IMG') {
+    //         const image = e.target.parentNode;
+    //         image.remove();
+    //     }
+    // });
+
+
+    // ═══════════════════════════════════════════════════════════════════════════
+    //  NOTES
+    // ═══════════════════════════════════════════════════════════════════════════
+
+    // Commonly used event properties:
+    //   type, timestamp, defaultPrevented, target, toElement, srcElement, currentTarget
+
+    // Interview-focused properties:
+    //   clientX, clientY, screenX, screenY, altKey, ctrlKey, shiftKey, keyCode
+
+</script>
+
+</html>

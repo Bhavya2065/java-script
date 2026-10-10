@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="greet">We are Learning Js</h1>
+    <button id="start">start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    function changeText(str) {
+        document.getElementById('greet').innerHTML = "Hello Bhavya!!";
+        console.log(str, Date.now());
+    }
+
+    const change = setInterval(changeText, 2000, "Hello Developer") // In these we pass the reference of the function, not calling
+
+    document.getElementById('stop').addEventListener('click', () => {
+        clearInterval(change);
+    })
+
+    document.getElementById('start').addEventListener('click', () => {
+        setInterval(changeText, 2000, "Hello Developer");
+    })
+
+    
+</script>
+</html>

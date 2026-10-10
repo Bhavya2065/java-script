@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Selector Learning</title>
+    <style>
+        * {
+            background-color: rgb(41, 41, 41);
+            color: aliceblue;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="title" class="heading">Learning DOM | How to use <span style="display: none;">test text</span> DOM Selector
+    </h1>
+    <h1>Lorem ipsum dolor sit amet.</h1>
+    <h2>Lorem ipsum dolor sit.</h2>
+    <h2>Lorem ipsum dolor sit.</h2>
+    <h2>Lorem ipsum dolor sit.</h2>
+    <p id="para">Lorem ipsum dolor sit amet.</p>
+    <input type="text" name="" id="">
+    <ul>
+        <li>One</li>
+        <li>Two</li>
+        <li>Three</li>
+    </ul>
+</body>
+<script>
+    const titleElement = document.getElementById('title');
+
+    console.log(titleElement.innerText);
+    // Output: Learning DOM | How to use DOM Selector
+
+    console.log(titleElement.textContent);
+    // Output: Learning DOM | How to use test text DOM Selector
+
+    console.log(titleElement.innerHTML);
+    // Output: Learning DOM | How to use <span style="display: none;">test text</span> DOM Selector
+</script>
+
+</html>
