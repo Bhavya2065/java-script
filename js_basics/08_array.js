@@ -270,6 +270,10 @@ const total = Myarr.reduce((accumulator, currentValue) => { // Here accumulator 
 console.log(total); // It returns the total of all numbers in num
 console.log();
 
+// Note: What happens if we remove the initial value (0)?
+// - With 0: 0 is the initial accumulator, and iteration starts from the first element (index 0).
+// - Without 0: The first element (index 0) becomes the initial accumulator, and iteration starts from the second element (index 1).
+
 // =============================================================================
 // 📌 11. REVERSE() METHOD
 // =============================================================================
