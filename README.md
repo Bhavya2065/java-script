@@ -660,6 +660,7 @@ const evens = [1, 2, 3, 4].filter(n => n % 2 === 0); // [2, 4]
 
 // .reduce() -> accumulates into single value
 const sum = [1, 2, 3].reduce((acc, curr) => acc + curr, 0); // 6
+// Note: Without initial value (0), the 1st element becomes the accumulator, and iteration starts from the 2nd element.
 
 // Helpers
 Array.isArray([1, 2]);       // true
@@ -675,8 +676,10 @@ Array.from("ABC");           // ["A", "B", "C"]
 > **Q2: What is the difference between `.map()` and `.forEach()`?**  
 > **A:** `.map()` returns a brand new array with transformed elements. `.forEach()` executes a callback for each element but always returns `undefined`.
 
-> **Q3: How does `.reduce()` work?**  
-> **A:** `.reduce((acc, curr) => ..., initialValue)` iterates through an array and accumulates all elements into a single result (e.g. sum or total count).
+> **Q3: How does `.reduce()` work, and what happens if the initial value is omitted?**  
+> **A:** `.reduce((accumulator, currentValue) => ..., initialValue)` accumulates elements into a single result:
+> - **With initial value (e.g. `0`)**: Accumulator starts with `0`, and iteration starts from the first element (index `0`).
+> - **Without initial value**: The first element (index `0`) becomes the initial accumulator, and iteration starts from the second element (index `1`).
 
 ---
 
