@@ -4,7 +4,7 @@
   =============================================================================
   
   1. Object Literals vs Constructors:
-     - Constructor (`Object.create()`): Creates object with specified prototype.
+     - Constructor (`Object.create()`): Creates object with specified prototype (`delete` cannot remove inherited prototype properties).
      - Prototype-less (`Object.create(null)`): Creates clean object with NO prototype (no default methods).
      - Literals (`{}`): Inherit from `Object.prototype`.
 
@@ -334,8 +334,24 @@ console.log(deepCopy.address.city); // "Mumbai"
 console.log();
 
 // =============================================================================
-// 📌 11. PROTOTYPE-LESS OBJECTS (OBJECT.CREATE(NULL))
+// 📌 11. OBJECT.CREATE() & PROTOTYPE-LESS OBJECTS (OBJECT.CREATE(NULL))
 // =============================================================================
+// --- 1. Cannot Delete Properties Created via Object.create() ---
+// Case A (1st argument - Prototype): Properties live inside [[Prototype]], not directly on the object.
+// `delete` only removes own properties and never touches [[Prototype]], so the property stays.
+const protoUser = { company: "Google" };
+const emp = Object.create(protoUser);
+
+delete emp.company; // returns true, but does NOT delete 'company' from [[Prototype]]
+console.log(emp.company); // Output: "Google"
+
+// Case B (2nd argument - Locked Property): Properties added in the 2nd argument
+// are locked by default (configurable: false), so `delete` fails and returns false.
+const emp2 = Object.create({}, { id: { value: 101 } });
+delete emp2.id; // returns false (cannot delete locked property)
+console.log(emp2.id); // Output: 101
+
+// --- 2. Prototype-less Objects: Object.create(null) ---
 // Object.create(null) creates a 100% clean object that does NOT inherit the Object properties or methods from Object.prototype.
 // Built-in methods (like .hasOwnProperty(), .toString(), .valueOf()) are NOT attached.
 
